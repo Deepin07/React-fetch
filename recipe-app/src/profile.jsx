@@ -1,17 +1,33 @@
+import React from 'react';
+import Margarita from './assets/Margarita.jpg'
+import pasta from './assets/pasta.jpg'
+import pavBhaji from './assets/pavbhaji.png'
+
+
+
 function Profile() {
 
-    const pizzas = [
+    const recipes = [
         {
+            name: "Margherita Pizza",
+            time: "30 mins",
+            description: "Classic cheesy pizza with fresh basil.",
             recipeUrl: "https://www.vegrecipesofindia.com/margherita-pizza-recipe/",
-            image: "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/margherita-pizza-4.jpg",
+            image: Margarita,
         },
         {
+            name: "Creamy Garlic Pasta",
+            time: "25 mins",
+            description: "Delicious pasta in rich, creamy garlic sauce.",
             recipeUrl: "https://www.allrecipes.com/recipe/269500/creamy-garlic-pasta/",
-            image: "https://www.allrecipes.com/thmb/EVkTRink6ZvQFts1yXOYTsqQDQw=/0x512/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/AR-269500-creamy-garlic-pasta-Beauties-4x3-f404628aad2a435a9985b2cf764209b5.jpg",
+            image: pasta,
         },
         {
-            recipeUrl: "https://www.vegrecipesofindia.com/margherita-pizza-recipe/",
-            image: "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/margherita-pizza-4.jpg",
+            name: "Street Style Pav Bhaji",
+            time: "40 mins",
+            description: "Spicy Mumbai-style mashed veggie curry with buns.",
+            recipeUrl: "https://ranveerbrar.com/recipes/street-style-pav-bhaji/",
+            image: pavBhaji,
         }
     ]
     const handleClick = (url) => {
@@ -20,17 +36,20 @@ function Profile() {
 
     return (
         <>
-            <h1>Pizza Recipe</h1>
             <div className="card-container">
-                {pizzas.map((pizza, index) => (
+                {recipes.map((recipe, index) => (
                     <div className="card" key={index}>
                         <img
-                            id={`pizza-${index}`}
-                            src={pizza.image}
-                            alt={`Pizza ${index + 1}`}
-                            className="card-image"
-                        />
-                        <button className="card-button" onClick={() => handleClick(pizza.recipeUrl)}>Click for Recipe</button>
+                        src={recipe.image}
+                        alt={recipe.name}
+                        className="card-image"
+                    />
+                       <div className="card-content" style={{ padding: '10px' }}>
+                        <h3 style={{ margin: '5px 0' }}>{recipe.name}</h3>
+                        <p style={{ margin: '5px 0', fontSize: '14px', color: '#777' }}>{recipe.time}</p>
+                        <p style={{ margin: '5px 0', fontSize: '14px' }}>{recipe.description}</p>
+                        <button className="card-button" onClick={() => handleClick(recipe.recipeUrl)}>Click for Recipe</button>
+                    </div>
                     </div>
                 ))}
             </div>

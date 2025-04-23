@@ -1,4 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body{
+  background-color: whitesmoke;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DDD0C8;
+  padding: 10px 20px;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 2px 5px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  cursor: pointer;
+  font-weight: 500;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.navbar li:hover {
+  color: #ff5722;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .navbar ul {
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+      width: 100%;
+  }
+
+  .navbar li {
+      width: 100%;
+  }
+}
+
+/*Card Design*/
 
 .card-container {
   display: flex;
@@ -9,30 +75,82 @@
 }
 
 .card {
-  display: inline-block;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid #ccc;
-  margin: 10px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 250px; /* Adjust to your liking */
+  background-color: white;
 }
 
 .card-image {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 250px;
+  object-fit: cover;
 }
 
 .card-button {
-  display: block;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #ff5e5e;
   color: white;
   border: none;
   cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .card-button:hover {
   background-color: #e64a19;
+}
+
+/* Responsive design for cards */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+}
+
+.card-details{
+  padding: 10px 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.card-details h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-time {
+  font-size: 14px;
+  color: #666;
+  margin: 2px 0;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  color: #333;
 }
