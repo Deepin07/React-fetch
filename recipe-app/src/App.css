@@ -39,6 +39,7 @@ h1 {
   font-weight: 500;
   color: #444;
   transition: color 0.3s ease;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .navbar li:hover {
@@ -153,4 +154,38 @@ h1 {
 .card-content h3 {
   font-size: 18px;
   color: #333;
+}
+
+/*About Page*/
+
+.aboutPage{
+  padding: 18rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size:x-large;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 80px;
+  text-align: justify;
+}
+
+.about-recipe{
+  text-align: center;
+  position: relative;
+  top: 2rem;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.about-recipe::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 3rem;
+  left: 50%; /* Start from the middle */
+  width: 30%; /* Adjust the width of the underline */
+  height: 2px;
+  background-color:#666;
+  
+  transform: translateX(-50%); /* Offset by half of the width to truly center it */
 }
