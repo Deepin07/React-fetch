@@ -5,10 +5,9 @@ import SearchInput from "./searchInput";
 
 function Recipes() {
 
-  return(
+  return (
     <>
-      <SearchInput/>
-      <RecipeDetails/>
+      <SearchInput />
     </>
   )
 
