@@ -6,6 +6,7 @@ import Home from './navbar/home'
 import About from './navbar/about'
 import Recipes from './navbar/recipes'
 import Create from './navbar/create'
+import RecipeDetails from './navbar/recipeDetails'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/recipe/:id" element={<RecipeDetails />} />
       </Routes>
     </>
   )
